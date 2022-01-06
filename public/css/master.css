@@ -1,3 +1,11 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.contents-height {
+  height: 30vh;
+}
+
+ul {
+  padding-left: 20px;
+}
