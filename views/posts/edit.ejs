@@ -11,7 +11,7 @@
     <div class="container">
       <%- include('../partials/nav') %>
       <div class="jumbotron">
-        <form action="/posts" method="post">
+        <form action="/posts/<%= post._id %>?_method=put" method="post">
           <div class="form-group">
             <label for="title">Title</label>
             <input
@@ -34,7 +34,7 @@
               class="form-control contents-height"
               id="content"
               name="content"
-              value="<%= post.title %>"
+              value="<%= post.content %>"
               placeholder="correct the contents!"
             />
           </div>

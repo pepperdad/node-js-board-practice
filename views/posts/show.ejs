@@ -15,11 +15,18 @@
         <div class="container">
           <h1 class="display-4"><%=post.title %></h1>
           <p class="lead"><%=post.content%></p>
-          <a href="/posts/<%= post._id%>/edit">
-            <button type="button" class="btn btn-outline-primary mb-3">
+          <form action="/posts/<%= post._id %>?_method=delete" method="post">
+            <a
+              href="/posts/<%= post._id%>/edit"
+              class="btn btn-outline-primary mb-3"
+            >
               edit
+            </a>
+
+            <button type="submit" class="btn btn-outline-primary mb-3">
+              delete
             </button>
-          </a>
+          </form>
         </div>
       </div>
     </div>

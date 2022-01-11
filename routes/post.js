@@ -34,4 +34,18 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
+router.put('/:id', (req, res) => {
+  Post.findOneAndUpdate({ _id: req.params.id }, req.body, (err, data) => {
+    if (err) return res.json(err);
+    res.redirect('/posts/' + req.params.id);
+  });
+});
+
+router.delete('/:id', (req, res) => {
+  Post.deleteOne({ _id: req.params.id }, (err) => {
+    if (err) return res.json(err);
+    res.redirect('/posts');
+  });
+});
+
 module.exports = router;
